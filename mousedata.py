@@ -1,7 +1,23 @@
 import pyautogui
-
-pyautogui.size()
+import time
 
 x, y = pyautogui.position()
 
-print(type(x))
+dt = 0.1
+
+class mousedata:
+    def __init__(self, x, y, dt):
+        self.x , self.y = pyautogui.position()
+        self.dt = 0.1
+    def velocity(x1, x2, y1, y2, dt):
+        xcomp = (x2-x1)/dt
+        ycomp = (y2-y1)/dt
+        return xcomp, ycomp
+
+while True:
+    xinit, yinit = pyautogui.position()
+    time.sleep(dt)
+    xfin, yfin = pyautogui.position()
+    print(mousedata.velocity(xinit, xfin, yinit, yfin, dt))
+
+
