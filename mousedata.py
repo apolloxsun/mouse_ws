@@ -1,5 +1,6 @@
 import pyautogui
 import time
+import math
 
 x, y = pyautogui.position()
 
@@ -13,7 +14,11 @@ class mousedata:
         xcomp = (x2-x1)/dt
         ycomp = (y2-y1)/dt
         return xcomp, ycomp
-
+    def speed(x1, x2, y1, y2, dt):
+        xcomp = (x2-x1)/dt
+        ycomp = (y2-y1)/dt
+        speed = math.sqrt(xcomp**2 + ycomp**2)
+        
 while True:
     xinit, yinit = pyautogui.position()
     time.sleep(dt)
