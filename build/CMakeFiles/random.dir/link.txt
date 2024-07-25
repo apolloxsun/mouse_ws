@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/random.dir/src/randombutton.cpp.o -o random  -Wl,-rpath,/usr/local/lib /usr/local/lib/libraylib.so -L/usr/local/lib -lraylib 
