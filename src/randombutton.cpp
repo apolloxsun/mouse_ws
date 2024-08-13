@@ -14,7 +14,11 @@ int main()
 {
     srand((unsigned) time(NULL));
     InitWindow(2560, 1660, "Random Button Generator");
-    //SetWindowSize(2560,1600);
+
+    int screenWidth = GetMonitorWidth(GetCurrentMonitor());
+    int screenHeight = GetMonitorHeight(GetCurrentMonitor());
+    SetWindowSize(screenWidth, screenHeight);
+
     SetTargetFPS(60);
     GuiSetStyle(DEFAULT, TEXT_SIZE, 30);
     GuiSetIconScale(3);
@@ -26,7 +30,6 @@ int main()
     {
         int currentWidth = GetScreenWidth();
         int currentHeight = GetScreenHeight();
-        //std::cout << currentHeight << " " << currentWidth << std::endl;
 
         BeginDrawing();
         ClearBackground(DARKGRAY);
@@ -35,13 +38,8 @@ int main()
     
         if(button == 0) {
             button = 1 + (rand() % 4);
-            //std::cout << button << std::endl;
-            //std::cout << currentHeight << " " << currentWidth << std::endl;
-            //std::cout << x << "," << y << std::endl;
             x = randomCoordinateX(currentWidth);
             y = randomCoordinateY(currentHeight);
-
-            //std::cout << x << "," << y << std::endl;
         }
         else if(button == 1){
             if(GuiButton((Rectangle){x,y, 150,80}, "button")){
