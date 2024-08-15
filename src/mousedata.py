@@ -15,11 +15,14 @@ class mousedata:
         xcomp = (x2-x1)/dt
         ycomp = (y2-y1)/dt
         speed = math.sqrt(xcomp**2 + ycomp**2)
+    def moveAndClick(x,y):
+        pyautogui.moveTo(x,y)
+        pyautogui.click(x,y)
         
 
-while True:
+"""while True:
     xinit, yinit = pyautogui.position()
     time.sleep(dt)
     xfin, yfin = pyautogui.position()
     print(mousedata.velocity(xinit, xfin, yinit, yfin, dt))
-    print(xinit,  " " , yinit)
+    print(xinit,  " " , yinit)"""
