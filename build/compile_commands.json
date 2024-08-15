@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/ece/Desktop/mouse_ws/build",
+  "command": "/usr/bin/c++  -I/home/ece/Desktop/mouse_ws/include -g -std=c++11 -I/usr/local/include -std=gnu++17 -o CMakeFiles/random.dir/src/randombutton.cpp.o -c /home/ece/Desktop/mouse_ws/src/randombutton.cpp",
+  "file": "/home/ece/Desktop/mouse_ws/src/randombutton.cpp"
+}
+]

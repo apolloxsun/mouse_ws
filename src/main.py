@@ -3,42 +3,42 @@ from imports import *
 if __name__ == "__main__":
     currentDir = os.path.dirname(__file__)
     imagesDir = os.path.join(currentDir, '../images')
-    buttonPath1 = os.path.join(imagesDir, 'button1.png')
-    buttonPath2 = os.path.join(imagesDir, 'button2.png')
-    buttonPath3 = os.path.join(imagesDir, 'button3.png')
-    buttonPath4 = os.path.join(imagesDir, 'button4.png')
-
 
     buttonImg1 = cv.cvtColor(cv.imread(os.path.join(imagesDir, 'button1.png')), cv.COLOR_BGR2GRAY)
-    cv.waitKey(1000)
+    buttonImg2 = cv.cvtColor(cv.imread(os.path.join(imagesDir, 'button2.png')), cv.COLOR_BGR2GRAY)
+    buttonImg3 = cv.cvtColor(cv.imread(os.path.join(imagesDir, 'button3.png')), cv.COLOR_BGR2GRAY)
+    buttonImg4 = cv.cvtColor(cv.imread(os.path.join(imagesDir, 'button4.png')), cv.COLOR_BGR2GRAY)
+
+    cv.waitKey(10)
 
     try:
         while True:
-            ss = pyautogui.screenshot()
+            ss = pyautogui.screenshot("ss")
             screenImg = cv.cvtColor(cv.cvtColor(np.array(ss), cv.COLOR_RGB2BGR), cv.COLOR_BGR2GRAY)
-
-            score = cv.matchTemplate(screenImg, buttonImg1, cv.TM_CCOEFF_NORMED)
-            #cv.imshow("score", cv.resize(screenImg, (800,600), interpolation=cv.INTER_AREA))
 
             threshold = 0.9
 
-            minVal, maxVal, minLoc, maxLoc = cv.minMaxLoc(score)
-            print(maxLoc)
+            minVal1, maxVal1, minLoc1, maxLoc1 = cv.minMaxLoc(cv.matchTemplate(screenImg, buttonImg1, cv.TM_CCOEFF_NORMED))
+            minVal2, maxVal2, minLoc2, maxLoc2 = cv.minMaxLoc(cv.matchTemplate(screenImg, buttonImg2, cv.TM_CCOEFF_NORMED))
+            minVal3, maxVal3, minLoc3, maxLoc3 = cv.minMaxLoc(cv.matchTemplate(screenImg, buttonImg3, cv.TM_CCOEFF_NORMED))
+            minVal4, maxVal4, minLoc4, maxLoc4 = cv.minMaxLoc(cv.matchTemplate(screenImg, buttonImg4, cv.TM_CCOEFF_NORMED))
 
-            if threshold <= maxVal: print("yes")
-            """printImg = cv.resize(screenImg, (800,600), interpolation=cv.INTER_AREA)
-            cv.imshow("display" , printImg)"""
+            #print(maxLoc1)
 
-            cv.waitKey(10) 
+            if threshold <= maxVal1: 
+                print("button1")
+                pyautogui.moveTo(maxLoc1)
+            elif threshold <= maxVal2: print("button2")
+            elif threshold <= maxVal3: print("button3")
+            elif threshold <= maxVal4: print("button4")
+
+            #printImg = cv.resize(screenImg, (800,600), interpolation=cv.INTER_AREA)
+            #cv.imshow("display" , screenImg)
+
+            cv.waitKey(10)
             cv.destroyAllWindows()
+            os.remove("ss")
             
     except KeyboardInterrupt:
+        os.remove("ss")
         print("application closed")
-
-    """threshold = 0.8
-    location = np.where(score>=threshold)
-    print(location)
-
-
-    
-    cv.waitKey(10000)"""
