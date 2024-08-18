@@ -1,5 +1,9 @@
 from imports import *
 
+cpp_process = subprocess.Popen(["../build/random"])
+
+python_process = subprocess.Popen(["python3", "main.py"])
+
 if __name__ == "__main__":
     currentDir = os.path.dirname(__file__)
     imagesDir = os.path.join(currentDir, '../images')
@@ -60,4 +64,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         os.remove("ss")
         print("application closed")
+
+        cpp_process.wait()
+        python_process.wait()
 
