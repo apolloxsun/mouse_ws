@@ -20,10 +20,7 @@ RUN pip install \
 
 WORKDIR /home/mouse_ws
 
-RUN mkdir -p src && cd src\
-    catkin_init_workspace
-
-COPY src/ ./src/
+COPY . /home/mouse_ws/src/
 
 RUN /bin/bash -c "source /opt/ros/$ROS_DISTRO/setup.bash && catkin_make"
 
