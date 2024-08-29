@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ros_user/mouse_ws/src/mouse/include/raygui.h
+raylib.h
+/home/ros_user/mouse_ws/src/mouse/include/raylib.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdarg.h
+-
+math.h
+-
+
+/home/ros_user/mouse_ws/src/mouse/src/randombutton.cpp
+raylib.h
+/home/ros_user/mouse_ws/src/mouse/src/raylib.h
+../include/raygui.h
+/home/ros_user/mouse_ws/src/mouse/include/raygui.h
+iostream
+-
+random
+-
+

@@ -1,0 +1,2 @@
+mouse
+-DCATKIN_DEVEL_PREFIX=/home/ros_user/mouse_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ros_user/mouse_ws/install -G Unix Makefiles
