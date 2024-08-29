@@ -26,33 +26,24 @@ if __name__ == "__main__":
 
 
             if threshold <= maxVal1: 
-                print("button1")
                 if (maxLoc1[0]- tolerence) <= pyautogui.position()[0] <= (maxLoc1[0] + buttonImg1.shape[1] + tolerence) and (maxLoc1[1] - tolerence) <= pyautogui.position()[1] <= (maxLoc1[0] + buttonImg1.shape[1] + tolerence):
                     pyautogui.moveTo((maxLoc1[0] + buttonImg1.shape[1]/2), (maxLoc1[1] + buttonImg1.shape[0]/2))
-                    print(maxLoc1[0] + buttonImg1.shape[1]/2), (maxLoc1[1] + buttonImg1.shape[0]/2)
                 pass
 
             elif threshold <= maxVal2: 
-                print("button2")
                 if (maxLoc2[0]- tolerence) <= pyautogui.position()[0] <= (maxLoc2[0] + buttonImg2.shape[1] + tolerence) and (maxLoc2[1] - tolerence) <= pyautogui.position()[1] <= (maxLoc2[0] + buttonImg2.shape[1] + tolerence):
                     pyautogui.moveTo((maxLoc2[0] + buttonImg2.shape[1]/2), (maxLoc2[1] + buttonImg2.shape[0]/2))
                 pass
 
             elif threshold <= maxVal3: 
-                print("button3")
                 if (maxLoc3[0]- tolerence) <= pyautogui.position()[0] <= (maxLoc3[0] + buttonImg3.shape[1] + tolerence) and (maxLoc3[1] - tolerence) <= pyautogui.position()[1] <= (maxLoc3[0] + buttonImg3.shape[1] + tolerence):
                     pyautogui.moveTo((maxLoc3[0] + buttonImg3.shape[1]/2), (maxLoc3[1] + buttonImg3.shape[0]/2))
                 pass
 
             elif threshold <= maxVal4: 
-                print("button4")
                 if (maxLoc4[0]- tolerence) <= pyautogui.position()[0] <= (maxLoc4[0] + buttonImg4.shape[1] + tolerence) and (maxLoc4[1] - tolerence) <= pyautogui.position()[1] <= (maxLoc4[0] + buttonImg4.shape[1] + tolerence):
                     pyautogui.moveTo((maxLoc4[0] + buttonImg4.shape[1]/2), (maxLoc4[1] + buttonImg4.shape[0]/2))
                 pass
-
-            else:
-                print("no button found")
-
 
             cv.destroyAllWindows()
             os.remove("ss")
