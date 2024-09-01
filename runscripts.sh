@@ -1,14 +1,5 @@
 #!/bin/bash
 
-mkdir build
-cd build
-
-cmake ..
-make
-
-cd ..
-
-
 handle_interrupt(){
     echo "closed applications"
     kill $CPP_PID
