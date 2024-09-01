@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/ece/Desktop/mouse_ws/include
 
-CXX_FLAGS = -g -std=c++11 -I/usr/local/include -std=gnu++17
+CXX_FLAGS = -std=c++11 -I/usr/local/include -std=gnu++17
 
