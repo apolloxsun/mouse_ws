@@ -1,3 +1,0 @@
-/home/ece/Desktop/mouse_ws/build/CMakeFiles/random.dir
-/home/ece/Desktop/mouse_ws/build/CMakeFiles/edit_cache.dir
-/home/ece/Desktop/mouse_ws/build/CMakeFiles/rebuild_cache.dir
