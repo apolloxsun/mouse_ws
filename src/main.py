@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            ss = pyautogui.screenshot("ss")
+            ss = pyautogui.screenshot("ss.png")
             screenImg = cv.cvtColor(cv.cvtColor(np.array(ss), cv.COLOR_RGB2BGR), cv.COLOR_BGR2GRAY)
 
             threshold = 0.9
@@ -46,9 +46,9 @@ if __name__ == "__main__":
                 pass
 
             cv.destroyAllWindows()
-            os.remove("ss")
+            os.remove("ss.png")
             
     except KeyboardInterrupt:
-        os.remove("ss")
+        os.remove("ss.png")
         print("application closed")
 

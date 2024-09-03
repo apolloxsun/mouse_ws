@@ -3,7 +3,7 @@
 handle_interrupt(){
     echo "closed applications"
     kill $CPP_PID
-    rm "ss"
+    rm "ss.png"
     kill $PYTHON_PID
     exit 1
 }
